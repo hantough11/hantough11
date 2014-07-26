@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>0.61</title>
+		<link rel="stylesheet" href="../websrc/css/style_common.css" />
+		<link rel="stylesheet" href="../websrc/css/editor_layer.css" />				
+		<script language="javascript" type="text/javascript" src="../websrc/js/jquery-1.8.2.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/jquery-ui.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/jquery.jcarousel.min.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/ui.js"></script>
+		<!--<script language="javascript" type="text/javascript" src="../websrc/js/keycode.js"></script>-->
+		<script language="javascript" type="text/javascript" src="../websrc/js/initializeFeatured.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/initializePlaylists.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/initializeTemplate.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/initializeMyprojects.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/initializeEditlayer.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/initializeSelectImageWindow.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/featured.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/playlist.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/template.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/myproject.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/selectImageWindow.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/imageTransition.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/adjustFocus.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/jquery.cookie.js"></script>
+		<!--<script language="javascript" type="text/javascript" src="../websrc/js/script.js"></script>-->
+		<script language="javascript" type="text/javascript" src="../websrc/js/main_common.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/edit_common.js"></script>
+		<!--<script language="javascript" type="text/javascript" src="../websrc/js/system.js"></script>-->
+	</head>
+	<!--<body onkeydown="processKeyDown(event); return false" ondragstart="return false" draggable="false">-->
+	<body ondragstart="return false;" ondrop="return false;" draggable="false;">
+		
+		<div id="gnb">
+			<a id="1" class="page_shift" href="#">			   
+				<span class="gnb_logo"></span>
+			</a>
+			<div class = "user_email">guest</div>
+			<a id="5" class="page_shift" href="#">
+				<span class="gnb_log"></span>
+			</a>
+			<!--<a href="#"><span class="gnb_close"></span></a>-->
+		</div>
+		<div id="lnb">			
+		    <a class="btn_featured" href="#">
+			    <span class="lnb_featured"></span>
+			</a>
+			 <a class="btn_playlists" href="#">
+				<span class="lnb_playlists"></span>
+			</a>
+			<a class="btn_editor" href="#">
+				<span class="lnb_editor"></span>
+			</a>
+			<a class="btn_support" href="#">
+				<span class="lnb_support"></span>
+			</a>
+			<a class="btn_settings" href="#">
+				<span class="lnb_settings"></span>
+			</a>
+			<div class="lnbBlock"></div>
+		</div>
+		<div id="body">
+			<div id="body_featured">
+				<div class="body_title">
+					<span><img src="../websrc/img/main/tl_main_01.png"></span>
+				</div>
+				<div class="body_contents">
+					<!-- 여기에 Featured List 들어감 -->
+					<!--<div class="body_contents_sub_dimmed"></div>-->
+					<div class="noContents"></div>
+				</div>
+				<div class="body_button">
+					<a href="#">
+						<span class="body_button_left"></span>
+					</a>
+					<a href="#">
+						<span class="body_button_right"></span>
+					</a>
+				</div>				
+				<div class="body_widget">
+					<!--
+					<a href="#">
+						<span class="body_widget_01"><img src="../websrc/img/main/ic_main_wigdet_01.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_02"><img src="../websrc/img/main/ic_main_wigdet_02.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_03"><img src="../websrc/img/main/ic_main_wigdet_03.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_04"><img src="../websrc/img/main/ic_main_wigdet_04.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_05"><img src="../websrc/img/main/ic_main_wigdet_05.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_06"><img src="../websrc/img/main/ic_main_wigdet_06.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_07"><img src="../websrc/img/main/ic_main_wigdet_07.png"></span>
+					</a>
+					-->
+				</div>				
+				<div id="previewPopupBackBorder">
+					<div class="previewPopup_scene">
+					<!-- 여기에 Featured Popup 들어감 -->
+				 	</div>
+					<div class="previewPopup_button">
+						<a href="#"><span class="edit"></span></a>
+						<a href="#"><span class="cancel"></span></a>
+					</div>			
+				</div>
+				<div class="editMap">
+					<div class="editMap_back"><a href="#"><div class="editMap_back_btn"></div></a></div>
+					<div class="editMap_scene">
+					<!-- 여기에 Featured Editor 들어감 -->
+					</div>
+				</div>				
+			</div>
+			
+			<div id="body_playlists">
+				<div class="body_title">
+					<span><img src="../websrc/img/main/tl_main_02.png"></span>
+				</div>
+				<div class="body_contents">
+					<!-- 여기에 Play List 들어감 -->
+					<!--<div class="body_contents_sub_dimmed"></div>-->
+					<div class="noContents"></div>
+				</div>
+				<div class="body_button">
+					<a href="#">
+						<span class="body_button_left"></span>
+					</a>
+					<a href="#">
+						<span class="body_button_right"></span>
+					</a>
+				</div>				
+				<div class="body_widget">
+					<!--
+					<a href="#">
+						<span class="body_widget_01"><img src="../websrc/img/main/ic_main_wigdet_01.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_02"><img src="../websrc/img/main/ic_main_wigdet_02.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_03"><img src="../websrc/img/main/ic_main_wigdet_03.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_04"><img src="../websrc/img/main/ic_main_wigdet_04.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_05"><img src="../websrc/img/main/ic_main_wigdet_05.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_06"><img src="../websrc/img/main/ic_main_wigdet_06.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_07"><img src="../websrc/img/main/ic_main_wigdet_07.png"></span>
+					</a>
+					-->
+				</div>				
+				<div id="previewPopupBackBorder">
+					<div class="previewPopup_scene">
+					<!-- 여기에 Play Popup 들어감 -->
+				 	</div>
+					<div class="previewPopup_button">
+						<a href="#"><span class="delete"></span></a>
+						<a href="#"><span class="edit"></span></a>
+						<a href="#"><span class="play"></span></a>
+						<a href="#"><span class="cancel"></span></a>
+					</div>			
+				</div>
+				<div class="editMap">
+					<div class="editMap_back"><a href="#"><div class="editMap_back_btn"></div></a></div>
+					<div class="editMap_scene">
+					<!-- 여기에 Play Editor 들어감 -->
+					</div>
+				</div>
+				<div class="player">
+					<div class="player_scene">
+					<!-- 여기에 Play Player 들어감 -->
+					</div>
+				</div>
+			</div>
+
+			<div id="body_editor">
+				<div class="body_title">
+					<span><img src="../websrc/img/main/tl_main_03.png"></span>
+				</div>
+				<div class="body_contents">
+					<a class="slide_theme" href="#">
+						<div class="body_contents_sub list_1"></div>
+					</a>
+					<!--<a class="slide_grid" href="#">-->
+						<div class="body_contents_sub list_2"></div>
+					<!--</a>-->
+					<a class="slide_myProjects" href="#">
+						<div class="body_contents_sub list_3"></div>					
+					</a>	
+					<!--<a class="slide_dimmed" href="#"><div class="body_contents_sub_dimmed"></div></a>-->
+				</div>
+				<div class="body_button">
+					<a href="#"><span class="body_button_left"></span></a>
+					<a href="#"><span class="body_button_right"></span></a>
+				</div>
+				<div class="body_widget">			    
+				</div>
+				<div id="body_contents_sub">
+				</div>-
+			</div>
+			
+			<div id="body_support">
+				<div class="body_title">
+					<span><img src="../websrc/img/main/tl_main_04.png"></span>
+				</div>
+				<div class="body_contents">
+					<a class="slide_about" href="#">
+						<div class="body_contents_sub list_1"></div>
+					</a>
+					<a class="slide_faq" href="#">
+						<div class="body_contents_sub list_2"></div>
+					</a>
+					<a class="slide_forum" href="#">
+						<div class="body_contents_sub list_3"></div>
+					</a>
+					<!--<a class="slide_dimmed" href="#"><div class="body_contents_sub_dimmed"></div></a>-->
+				</div>
+				<div class="body_button">
+					<a href="#"><span class="body_button_left"></span></a>
+					<a href="#"><span class="body_button_right"></span></a>
+				</div>
+				<div class="body_widget"></div>
+				<div id="lay_support"></div>
+			</div>
+			
+			<div id="body_settings">
+				<div class="body_title">
+					<span><img src="../websrc/img/main/tl_main_05.png"></span>
+				</div>
+				<div class="body_contents">
+					<a class="accounts_light" href="#">
+						<div class="body_contents_sub list_1"><div class="account_current"></div></div>
+					</a>
+					<a class="accounts_premium" href="#">
+						<div class="body_contents_sub list_2"><div class="account_current"></div></div>
+					</a>
+					<a class="accounts_professional" href="#">
+						<div class="body_contents_sub list_3"><div class="account_current"></div></div>
+					</a>
+					<a class="accounts_enterprise" href="#">
+						<div class="body_contents_sub list_4"><div class="account_current"></div></div>
+					</a>
+					<!--
+					<a class="slide_signIn" href="#">
+						<div class="body_contents_sub list_1"></div>
+					</a>
+					<a class="slide_signUp" href="#">
+						<div class="body_contents_sub list_2"></div>
+					</a>-->			
+					<!--<a class="slide_dimmed" href="#"><div class="body_contents_sub_dimmed"></div></a>-->
+				</div>
+				<div class="body_button">
+					<a href="#"><span class="body_button_left"></span></a>
+					<a href="#"><span class="body_button_right"></span></a>
+				</div>
+				<div class="body_widget">			    
+				</div>
+				<div id="lay_settings">
+				</div>	
+			</div>
+			
+			<div id="body_theme">
+				<div class="body_back">
+					 <a href="#"><div class="body_back_btn"></div></a>
+				</div>
+				<div class="body_title">
+					<span><img src="../websrc/img/main/tl_editor_01.png"></span>
+				</div>
+				<div class="body_contents">
+					<!-- 여기에 Template List 들어감 -->
+					<!--<div class="body_contents_sub_dimmed"></div>-->				
+				</div>
+				<div class="body_button">
+					<a href="#"><span class="body_button_left"></span></a>
+					<a href="#"><span class="body_button_right"></span></a>
+				</div>				
+				<div class="body_widget">
+					<!--
+					<a href="#">
+						<span class="body_widget_01"><img src="../websrc/img/main/ic_main_wigdet_01.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_02"><img src="../websrc/img/main/ic_main_wigdet_02.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_03"><img src="../websrc/img/main/ic_main_wigdet_03.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_04"><img src="../websrc/img/main/ic_main_wigdet_04.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_05"><img src="../websrc/img/main/ic_main_wigdet_05.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_06"><img src="../websrc/img/main/ic_main_wigdet_06.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_07"><img src="../websrc/img/main/ic_main_wigdet_07.png"></span>
+					</a>
+					-->
+				</div>				
+				<div id="previewPopupBackBorder">
+					<div class="previewPopup_scene">
+					<!-- 여기에 Template Popup 들어감 -->
+				 	</div>
+					<div class="previewPopup_button">
+						<a href="#"><span class="play"></span></a>
+						<a href="#"><span class="edit"></span></a>
+						<a href="#"><span class="cancel"></span></a>
+					</div>			
+				</div>
+				<!--<div id="lay_editor_theme">
+				</div>-->
+				<div class="editMap">
+					<div class="editMap_back"><a href="#"><div class="editMap_back_btn"></div></a></div>
+					<div class="editMap_scene">
+					<!-- 여기에 Template Editor 들어감 -->
+					</div>
+				</div>
+			</div>
+			
+			<div id="body_myprojects">
+				<div class="body_back"><a href="#"><div class="body_back_btn"></div></a></div>
+				<div class="body_title">
+					<span><img src="../websrc/img/main/tl_editor_03.png"></span>
+				</div>
+				<div class="body_contents">
+					<!-- 여기에 MyProject List 들어감 -->
+					<!--<div class="body_contents_sub_dimmed"></div>-->			
+					<div class="noContents"></div>
+				</div>
+				<div class="body_button">
+					<a href="#">
+						<span class="body_button_left"></span>
+					</a>
+					<a href="#">
+						<span class="body_button_right"></span>
+					</a>
+				</div>				
+				<div class="body_widget">
+					<!--
+					<a href="#">
+						<span class="body_widget_01"><img src="../websrc/img/main/ic_main_wigdet_01.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_02"><img src="../websrc/img/main/ic_main_wigdet_02.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_03"><img src="../websrc/img/main/ic_main_wigdet_03.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_04"><img src="../websrc/img/main/ic_main_wigdet_04.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_05"><img src="../websrc/img/main/ic_main_wigdet_05.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_06"><img src="../websrc/img/main/ic_main_wigdet_06.png"></span>
+					</a>
+					<a href="#">
+						<span class="body_widget_07"><img src="../websrc/img/main/ic_main_wigdet_07.png"></span>
+					</a>
+					-->
+				</div>				
+				<div id="previewPopupBackBorder">
+					<div class="previewPopup_scene">
+					<!-- 여기에 MyProject Popup 들어감 -->
+				 	</div>
+					<div class="previewPopup_button">
+						<a href="#"><span class="edit"></span></a>
+						<a href="#"><span class="cancel"></span></a>
+					</div>			
+				</div>
+				<div class="editMap">
+					<div class="editMap_back"><a href="#"><div class="editMap_back_btn"></div></a></div>
+					<div class="editMap_scene">
+					<!-- 여기에 MyProject Editor 들어감 -->
+					</div>
+				</div>				
+			</div>
+			
+			<div id="body_about">
+				<div class="body_back"><a href="#"><div class="body_back_btn"></div></a></div>
+				<div class="body_title"><span><img src="../websrc/img/main/tl_support_01.png"></span></div>
+				<div class="body_contents">
+					<div class="body_movie_loading">
+					</div>
+					<iframe class="body_movie" width="498" height="281" src="//www.youtube.com/embed/_WDa6CG8_1w" frameborder="0" allowfullscreen></iframe>		
+					<a href="#"><div class="body_email"><span class="email_address">popon@petaframe.com</span></div></a>
+					<a href="#"><div class="close"></div></a>
+				</div>
+			</div>	
+			
+			<div id="body_faq">
+				<div class="body_back"><a href="#"><div class="body_back_btn"></div></a></div>
+				<div class="body_title"><span><img src="../websrc/img/main/tl_support_02.png"></span></div>
+				<div class="body_contents">
+					<div class="container_outer faq scr-area">
+						<div class="container faq scr-cont">
+							<div id="faq_1" class="faqList list_1">
+								<div class="question">
+									<div class="question_icon"></div>
+									<span class="question_text">질문 1</span>
+									<div class="question_line"></div>
+								</div>
+								<div class="answer">
+									<div class="answer_icon"></div>
+									<span class="answer_text">동해물과 백두산이 마르고 닳도록<br>
+																하느님이 보우하사 우리나라 만세<br>
+																무궁화 삼천리 화려강산<br>
+																대한 사람 대한으로 길이 보전하세</span>
+									<div class="answer_line"></div>
+								</div>
+							</div>
+							<div id="faq_2" class="faqList list_2">
+								<div class="question">
+									<div class="question_icon"></div>
+									<span class="question_text">질문 2</span>
+									<div class="question_line"></div>
+								</div>
+								<div class="answer">
+									<div class="answer_icon"></div>
+									<span class="answer_text">남산 위에 저 소나무, 철갑을 두른 듯<br>
+																바람서리 불변함은 우리 기상일세.<br>
+																무궁화 삼천리 화려강산 <br>
+																대한 사람, 대한으로 길이 보전하세</span>
+									<div class="answer_line"></div>
+								</div>
+							</div>
+							<div id="faq_3" class="faqList list_3">
+								<div class="question">
+									<div class="question_icon"></div>
+									<span class="question_text">질문 3</span>
+									<div class="question_line"></div>
+								</div>
+								<div class="answer">
+									<div class="answer_icon"></div>
+									<span class="answer_text">남산 위에 저 소나무, 철갑을 두른 듯<br>
+																바람서리 불변함은 우리 기상일세.<br>
+																무궁화 삼천리 화려강산 <br>
+																대한 사람, 대한으로 길이 보전하세</span>
+									<div class="answer_line"></div>
+								</div>
+							</div>
+							<div id="faq_4" class="faqList list_4">
+								<div class="question">
+									<div class="question_icon"></div>
+									<span class="question_text">질문 4</span>
+									<div class="question_line"></div>
+								</div>
+								<div class="answer">
+									<div class="answer_icon"></div>
+									<span class="answer_text">남산 위에 저 소나무, 철갑을 두른 듯<br>
+																바람서리 불변함은 우리 기상일세.<br>
+																무궁화 삼천리 화려강산 <br>
+																대한 사람, 대한으로 길이 보전하세</span>
+									<div class="answer_line"></div>
+								</div>
+							</div>							
+						</div>
+					</div>	
+					<div class="imageScroll faq scr-bar-area">
+						<div class="navigator faq scr-bar">
+						</div>
+					</div>	
+				</div>
+			</div>	
+			
+			<div id="body_forum">
+				<div class="body_back"><a href="#"><div class="body_back_btn"></div></a></div>
+				<div class="body_title"><span><img src="../websrc/img/main/tl_support_03.png"></span></div>
+				<div class="body_contents">
+					<a href="#" class="newTopic">
+						<div class="body_new_topic"></div>
+					</a>
+					<a href="#" class="list">
+						<div class="body_foum_01"></div>
+					</a>
+					<a href="#" class="list">
+						<div class="body_foum_02"></div>
+					</a>
+					<a href="#" class="list">
+						<div class="body_foum_03"></div>
+					</a>
+					<a href="#" class="list">
+						<div class="body_foum_04"></div>
+					</a>
+					<a href="#" class="list">
+						<div class="body_foum_05"></div>
+					</a>
+					<a href="#" class="list">
+						<div class="body_foum_06"></div>
+					</a>
+				</div>					
+				<div id="lay_forum">
+					<div class="lay_forum_text">
+						<input type="text"></input>
+					</div>
+					<div class="lay_forum_button">
+						<a href="#"><span class="xbox"></span></a>
+						<a href="#"><span class="delete"></span></a>
+						<a href="#"><span class="write"></span></a>
+					</div>				
+				</div>
+				<div id="lay_new_topic">
+					<div class="lay_new_topic_title">
+						<input type="text"></input>
+					</div>
+					<div class="lay_new_topic_text">
+						<textarea name="new_topic" rows="5" cols="30"></textarea>
+					</div>
+					<div class="lay_new_topic_button">
+						<a href="#"><span class="xbox"></span></a>
+						<a href="#"><span class="apply"></span></a>
+						<a href="#"><span class="cancel"></span></a>
+					</div>				
+				</div>			
+			</div>	
+			
+			<div id="body_signin">
+				<div class="body_back"><a href="#"><div class="body_back_btn"></div></a></div>
+				<div class="body_title"><span><img src="../websrc/img/main/tl_settings_01.png"></span></div>
+				<div class="body_contents">
+					<div class="body_email">
+						<input type="text" placeHolder="Email" rel="Email"></input>
+					</div>
+					<div class="body_password">
+						<input type="password" placeHolder="Password" rel="Password"></input>
+					</div>
+					<a href="#" class="btnSignin" >
+						<div class="body_signin_btn">
+						</div>		
+					</a>
+					<div class="body_checkbox">
+						<input id="chk_img_1" type="checkbox" class="body_checkbox_img"></input>
+						<label for="chk_img_1"></label>
+					</div>
+					<div class="body_remember">
+					</div>
+					<div class="body_line">
+					</div>
+					<a href="#">
+						<div class="body_forget poplink">
+						</div>
+					</a>
+				</div>
+				<div id="lay_forget">
+					<div class="lay_forget_button">
+						<a href="#"><span class="xbox"></span></a>
+						<a href="#"><span class="apply"></span></a>
+						<a href="#"><span class="cancel"></span></a>
+					</div>				
+				</div>	
+			</div>	
+			
+			<div id="body_signup">
+				<div class="body_back"><a href="#"><div class="body_back_btn"></div></a></div>
+				<div class="body_title"><span><img src="../websrc/img/main/tl_settings_02.png"></span></div>
+				<div class="body_contents page_1">
+					<div class="body_contract">
+						<span class="contract">
+							제1조 목적 본 약관은 주식회사 페타프레임(이하 회사)가 운영하는 그리드사인을 이용함에 있어 회원과 회사의 관리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+						</span>
+					</div>
+					<div class="body_checkbox">
+						<input id="chk_img_2" type="checkbox" class="body_checkbox_img"></input>
+						<label for="chk_img_2"></label>
+					</div>
+					<div class="body_agree">
+					</div>
+					<div class="body_name">
+						<input type="text" placeHolder="Your Name" rel="Name"></input>
+					</div>
+					<div class="body_email">
+						<input type="text" placeHolder="Email" rel="Email"></input>
+					</div>
+					<div class="body_password">
+						<input type="Password" placeHolder="Password" rel="Password"></input>
+					</div>
+					<a href="#">
+						<div class="body_next">
+						</div>
+					</a>
+				</div>
+				<div class="body_contents page_2">
+					<div class="body_goods_list">
+					</div>
+					<div class="body_goods_radio">
+						<input id="goods_01" type="radio" class="body_goods_radio_img" name="good_list" checked></input>
+						<label for="goods_01"></label>
+						<input id="goods_02" type="radio" class="body_goods_radio_img" name="good_list"></input>
+						<label for="goods_02"></label>
+						<input id="goods_03" type="radio" class="body_goods_radio_img" name="good_list"></input>
+						<label for="goods_03"></label>
+						<input id="goods_04" type="radio" class="body_goods_radio_img" name="good_list"></input>
+						<label for="goods_04"></label>
+					</div>
+					<a href="#">
+						<div class="body_next">
+						</div>
+					</a>
+				</div>				
+				<div class="body_contents page_3">
+					<div class="body_congratulation">
+					</div>
+					<div class="body_activation">
+						<span class="activation_code">1234567890</span>
+					</div>
+					<a href="#">
+						<div class="body_ok body_back">
+						</div>
+					</a>				
+				</div>			
+				
+			</div>	
+			
+			<div id="lay_editor_layer">
+				<div class="left_btn">
+					<div class="left_selected"></div>
+					<a id="1" class="leftBtn_cancel" href="#" ><span class="left_cancel"></span></a>
+					<a id="2" class="leftBtn_save" href="#"><span class="left_save"></span></a>
+					<a id="3" class="leftBtn_publish" href="#"><span class="left_publish"></span></a>
+					<a id="4" class="leftBtn_backgrounds" href="#"><span class="left_backgrounds"></span></a>
+					<a id="5" class="leftBtn_widgets" href="#"><span class="left_widgets"></span></a>
+					<!--<span class="left_widgets_dim"></span>-->
+					<!--<span class="left_widgets"></span>-->
+					<a id="6" class="leftBtn_images" href="#"><span class="left_images"></span></a>
+					<a id="7" class="leftBtn_text" href="#"><span class="left_text"></span></a>
+				</div>
+				<div class="backgrounds">
+					<div class="top_btn">
+						<a id="1" href="#"><div class="color_btn"></div></a>
+						<a id="2" href="#"><div class="image_btn"></div></a>
+						<a id="3" href="#"><div class="video_btn"></div></a>
+						<!--<a id="4" href="#"><div class="tv_btn"></div></a>-->
+						<div class="tv_btn"></div>
+					</div>
+					<div class="contents">					
+						<div class="color">
+							<div class="color_window">
+							</div>
+							<div class="color_list">
+								<a id="1" href="#"><div class="color_1"></div></a>
+								<a id="2" href="#"><div class="color_2"></div></a>
+								<a id="3" href="#"><div class="color_3"></div></a>
+								<a id="4" href="#"><div class="color_4"></div></a>
+								<a id="5" href="#"><div class="color_5"></div></a>
+								<a id="6" href="#"><div class="color_6"></div></a>
+								<a id="7" href="#"><div class="color_7"></div></a>
+								<a id="8" href="#"><div class="color_8"></div></a>
+								<a id="9" href="#"><div class="color_9"></div></a>
+								<a id="10" href="#"><div class="color_10"></div></a>					
+							</div>	
+							<div class="color_selected">
+							</div>				
+							<div id="color_sub_list_1" class="colorSubList">
+								<a id="1" href="#"><div class="color_sub_1"></div></a>
+								<a id="2" href="#"><div class="color_sub_2"></div></a>
+								<a id="3" href="#"><div class="color_sub_3"></div></a>
+								<a id="4" href="#"><div class="color_sub_4"></div></a>
+								<a id="5" href="#"><div class="color_sub_5"></div></a>
+								<a id="6" href="#"><div class="color_sub_6"></div></a>
+							</div>
+							<div id="color_sub_list_2" class="colorSubList">
+								<a id="1" href="#"><div class="color_sub_1"></div></a>
+								<a id="2" href="#"><div class="color_sub_2"></div></a>
+								<a id="3" href="#"><div class="color_sub_3"></div></a>
+								<a id="4" href="#"><div class="color_sub_4"></div></a>
+								<a id="5" href="#"><div class="color_sub_5"></div></a>
+								<a id="6" href="#"><div class="color_sub_6"></div></a>
+							</div>
+							<div id="color_sub_list_3" class="colorSubList">
+								<a id="1" href="#"><div class="color_sub_1"></div></a>
+								<a id="2" href="#"><div class="color_sub_2"></div></a>
+								<a id="3" href="#"><div class="color_sub_3"></div></a>
+								<a id="4" href="#"><div class="color_sub_4"></div></a>
+								<a id="5" href="#"><div class="color_sub_5"></div></a>
+								<a id="6" href="#"><div class="color_sub_6"></div></a>
+							</div>
+							<div id="color_sub_list_4" class="colorSubList">
+								<a id="1" href="#"><div class="color_sub_1"></div></a>
+								<a id="2" href="#"><div class="color_sub_2"></div></a>
+								<a id="3" href="#"><div class="color_sub_3"></div></a>
+								<a id="4" href="#"><div class="color_sub_4"></div></a>
+								<a id="5" href="#"><div class="color_sub_5"></div></a>
+								<a id="6" href="#"><div class="color_sub_6"></div></a>
+							</div>
+							<div id="color_sub_list_5" class="colorSubList">
+								<a id="1" href="#"><div class="color_sub_1"></div></a>
+								<a id="2" href="#"><div class="color_sub_2"></div></a>
+								<a id="3" href="#"><div class="color_sub_3"></div></a>
+								<a id="4" href="#"><div class="color_sub_4"></div></a>
+								<a id="5" href="#"><div class="color_sub_5"></div></a>
+								<a id="6" href="#"><div class="color_sub_6"></div></a>
+							</div>
+							<div id="color_sub_list_6" class="colorSubList">
+								<a id="1" href="#"><div class="color_sub_1"></div></a>
+								<a id="2" href="#"><div class="color_sub_2"></div></a>
+								<a id="3" href="#"><div class="color_sub_3"></div></a>
+								<a id="4" href="#"><div class="color_sub_4"></div></a>
+								<a id="5" href="#"><div class="color_sub_5"></div></a>
+								<a id="6" href="#"><div class="color_sub_6"></div></a>
+							</div>
+							<div id="color_sub_list_7" class="colorSubList">
+								<a id="1" href="#"><div class="color_sub_1"></div></a>
+								<a id="2" href="#"><div class="color_sub_2"></div></a>
+								<a id="3" href="#"><div class="color_sub_3"></div></a>
+								<a id="4" href="#"><div class="color_sub_4"></div></a>
+								<a id="5" href="#"><div class="color_sub_5"></div></a>
+								<a id="6" href="#"><div class="color_sub_6"></div></a>
+							</div>
+							<div id="color_sub_list_8" class="colorSubList">
+								<a id="1" href="#"><div class="color_sub_1"></div></a>
+								<a id="2" href="#"><div class="color_sub_2"></div></a>
+								<a id="3" href="#"><div class="color_sub_3"></div></a>
+								<a id="4" href="#"><div class="color_sub_4"></div></a>
+								<a id="5" href="#"><div class="color_sub_5"></div></a>
+								<a id="6" href="#"><div class="color_sub_6"></div></a>
+							</div>
+							<div id="color_sub_list_9" class="colorSubList">
+								<a id="1" href="#"><div class="color_sub_1"></div></a>
+								<a id="2" href="#"><div class="color_sub_2"></div></a>
+								<a id="3" href="#"><div class="color_sub_3"></div></a>
+								<a id="4" href="#"><div class="color_sub_4"></div></a>
+								<a id="5" href="#"><div class="color_sub_5"></div></a>
+								<a id="6" href="#"><div class="color_sub_6"></div></a>
+							</div>
+							<div id="color_sub_list_10" class="colorSubList">
+								<a id="1" href="#"><div class="color_sub_1"></div></a>
+								<a id="2" href="#"><div class="color_sub_2"></div></a>
+								<a id="3" href="#"><div class="color_sub_3"></div></a>
+								<a id="4" href="#"><div class="color_sub_4"></div></a>
+								<a id="5" href="#"><div class="color_sub_5"></div></a>
+								<a id="6" href="#"><div class="color_sub_6"></div></a>
+							</div>				
+							<div class="bottom_btn">
+								<a id="1" href="#"><div class="apply"></div></a>
+								<a id="2" href="#"><div class="cancel"></div></a>
+							</div>
+						</div>
+						<div class="image">
+							<div class="image_window">
+							</div>
+							<div class="image_preview">
+								<a id="1" href="#"><div class="image_preview_1"></div></a>
+							</div>
+							<div class="bottom_btn">
+								<a id="1" href="#"><div class="apply"></div></a>
+								<a id="2" href="#"><div class="cancel"></div></a>
+								
+							</div>
+							<div class="select_an_image">
+								<div class="list_item_container_outer backgroundImage scr-area">
+									<div class="list_item_container backgroundImage scr-cont">									
+										<div class="title_myImages">My Images
+											<div class="noImage">No image. Please add your image.</div>
+										</div>	
+										<div class="title_digitalAndArt">Digital and Art</div>
+										<div class="title_plantsAndFlowers">Plants and Flowers</div>
+										<div class="title_placesAndLandscape">Places and Landscape</div>
+										<div class="title_natureAndAnimals">Nature and Animals</div>
+										<div class="image_selected"></div>
+									</div>
+								</div>
+								<div class="imageScroll backgroundImage scr-bar-area">
+									<div class="navigator backgroundImage scr-bar">
+									</div>
+								</div>
+								<form enctype="multipart/form-data" method="post">
+								<!--<form action="#" enctype="multipart/form-data" method="post">-->
+									<a href="#">									
+										<input type="file" accept='image/*' name="uploaded_files" class="input_file_img" multiple onchange="reviewUploadImg(this)"></input>
+										<!--<input type="submit" value="Send">-->
+										<div class="plus"></div>
+									</a>
+									<a href="#"><div class="minus"></div></a>
+									<a href="#"><div class="close"></div></a>
+								</form>
+							</div>
+						</div>
+						<div class="video">
+							<div class="video_window">
+							</div>
+							<div class="video_preview">
+								<a id="1" href="#"><div class="video_preview_1"></div></a>
+								<input type="file" class="input_file_img"></input>
+							</div>				
+							<div class="bottom_btn">
+								<a id="1" href="#"><div class="apply"></div></a>
+								<a id="2" href="#"><div class="cancel"></div></a>
+							</div>
+						</div>
+						<div class="tv">
+							<div class="tv_window">
+							</div>
+							<div class="tv_preview">
+								<a id="1" href="#"><div class="tv_preview_1"></div></a>
+								<input type="file" class="input_file_img"></input>
+							</div>	
+							<div class="bottom_btn">
+								<a id="1" href="#"><div class="apply"></div></a>
+								<a id="2" href="#"><div class="cancel"></div></a>
+							</div>
+						</div>				
+					</div>
+				</div>
+				<div class="widgets">
+					<div class="top_btn">
+						<a id="1" href="#"><div class="tv_btn"></div></a>
+						<a id="2" href="#"><div class="video_btn"></div></a>
+						<a id="3" href="#"><div class="music_btn"></div></a>
+						<a id="4" href="#"><div class="clock_btn"></div></a>
+						<a id="5" href="#"><div class="weather_btn"></div></a>
+						<a id="6" href="#"><div class="news_btn"></div></a>
+						<a id="7" href="#"><div class="currencies_btn"></div></a>
+					</div>
+					<div class="contents">
+						<div class="tv">
+							<div class="tv_window">
+							</div>
+							<div class="tv_preview">
+								<a id="1" href="#"><div class="tv_preview_1"></div></a>
+								<input type="file" class="input_file_img"></input>
+							</div>	
+							<div class="bottom_btn">
+								<a id="1" href="#"><div class="apply"></div></a>
+								<a id="2" href="#"><div class="cancel"></div></a>
+							</div>
+						</div>			
+						<div class="video">
+							<div class="video_window">
+							</div>
+							<div class="video_preview">
+								<a id="1" href="#"><div class="video_preview_1"></div></a>
+								<input type="file" class="input_file_img"></input>
+							</div>				
+							<div class="bottom_btn">
+								<a id="1" href="#"><div class="apply"></div></a>
+								<a id="2" href="#"><div class="cancel"></div></a>
+							</div>
+						</div>
+						<div class="music">
+							<div class="music_window">
+							</div>
+							<div class="list">
+								<a id="1" href="#"><div class="music_1"></div></a>
+								<a id="2" href="#"><div class="music_2"></div></a>
+								<a id="3" href="#"><div class="music_3"></div></a>
+								<a id="4" href="#"><div class="music_4"></div></a>
+								<a id="5" href="#"><div class="music_5"></div></a>
+							</div>
+							<div class="navigation">
+								<a id="1" href="#"><div class="left"></div></a>
+								<a id="2" href="#"><div class="right"></div></a>
+							</div>
+							<div class="music_playlists">
+								<a id="1" href="#"><div class="popup_btn"></div></a>
+							</div>
+							<!--<div class="music_selected"></div>-->
+							<div class="bottom_btn">
+								<a id="1" href="#"><div class="apply"></div></a>
+								<a id="2" href="#"><div class="cancel"></div></a>
+							</div>
+						</div>
+						<div class="clock">
+							<div class="clock_window">
+							</div>
+							<div class="list">
+								<a id="1" href="#"><div class="clock_1"></div></a>
+								<a id="2" href="#"><div class="clock_2"></div></a>
+								<a id="3" href="#"><div class="clock_3"></div></a>
+								<a id="4" href="#"><div class="clock_4"></div></a>
+								<a id="5" href="#"><div class="clock_5"></div></a>
+							</div>
+							<div class="navigation">
+								<a id="1" href="#"><div class="left"></div></a>
+								<a id="2" href="#"><div class="right"></div></a>
+							</div>
+							<div class="clock_playlists">
+								<a id="1" href="#"><div class="popup_btn"></div></a>
+							</div>
+							<!--<div class="clock_selected"></div>-->
+							<div class="bottom_btn">
+								<a id="1" href="#"><div class="apply"></div></a>
+								<a id="2" href="#"><div class="cancel"></div></a>
+							</div>
+						</div>
+						<div class="weather">
+							<div class="weather_window">
+							</div>
+							<div class="list">
+								<a id="1" href="#"><div class="weather_1"></div></a>
+								<a id="2" href="#"><div class="weather_2"></div></a>
+								<a id="3" href="#"><div class="weather_3"></div></a>
+								<a id="4" href="#"><div class="weather_4"></div></a>
+								<a id="5" href="#"><div class="weather_5"></div></a>
+							</div>
+							<div class="navigation">
+								<a id="1" href="#"><div class="left"></div></a>
+								<a id="2" href="#"><div class="right"></div></a>
+							</div>
+							<div class="weather_playlists">
+								<a id="1" href="#"><div class="popup_btn"></div></a>
+							</div>
+							<!--<div class="weather_selected"></div>-->
+							<div class="bottom_btn">
+								<a id="1" href="#"><div class="apply"></div></a>
+								<a id="2" href="#"><div class="cancel"></div></a>
+							</div>
+						</div>
+						<div class="news">
+							<div class="news_window">
+							</div>
+							<div class="list">
+								<a id="1" href="#"><div class="news_1"></div></a>
+								<a id="2" href="#"><div class="news_2"></div></a>
+								<a id="3" href="#"><div class="news_3"></div></a>
+								<a id="4" href="#"><div class="news_4"></div></a>
+								<a id="5" href="#"><div class="news_5"></div></a>
+							</div>
+							<div class="navigation">
+								<a id="1" href="#"><div class="left"></div></a>
+								<a id="2" href="#"><div class="right"></div></a>
+							</div>
+							<div class="news_playlists">
+								<a id="1" href="#"><div class="popup_btn"></div></a>
+							</div>
+							<!--<div class="news_selected"></div>-->
+							<div class="bottom_btn">
+								<a id="1" href="#"><div class="apply"></div></a>
+								<a id="2" href="#"><div class="cancel"></div></a>
+							</div>
+						</div>
+						<div class="currencies">
+							<div class="currencies_window">
+							</div>
+							<div class="list">
+								<a id="1" href="#"><div class="currencies_1"></div></a>
+								<a id="2" href="#"><div class="currencies_2"></div></a>
+								<a id="3" href="#"><div class="currencies_3"></div></a>
+								<a id="4" href="#"><div class="currencies_4"></div></a>
+								<a id="5" href="#"><div class="currencies_5"></div></a>
+							</div>
+							<div class="navigation">
+								<a id="1" href="#"><div class="left"></div></a>
+								<a id="2" href="#"><div class="right"></div></a>
+							</div>
+							<div class="currencies_playlists">
+								<a id="1" href="#"><div class="popup_btn"></div></a>
+							</div>
+							<!--<div class="currencies_selected"></div>-->
+							<div class="bottom_btn">
+								<a id="1" href="#"><div class="apply"></div></a>
+								<a id="2" href="#"><div class="cancel"></div></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="images">
+					<div class="contents">
+						<div class="image_window">
+						</div>						
+						<div class="image_preview">
+							<a href="#">
+								<div id="1" class="image_preview_1 cellTarget">
+									<div class = "imageInCell">
+										<img src=""></img>
+									</div>
+									<div class = "ableCell"></div>
+									<div class = "disableCell_1"></div>
+									<div class = "disableCell_2"></div>
+									<div class = "previewImage"></div>
+									<div class = "cell_size">
+										<div class="pix">100 x 100</div>
+									</div>
+								</div>
+							</a>
+							<a href="#">
+								<div id="2" class="image_preview_2 cellTarget">
+									<div class = "imageInCell">
+										<img src=""></img>
+									</div>
+									<div class = "ableCell"></div>
+									<div class = "disableCell_1"></div>
+									<div class = "disableCell_2"></div>
+									<div class = "previewImage"></div>
+									<div class = "cell_size">
+										<div class="pix">1000 x 100</div>
+									</div>
+								</div>
+							</a>
+							<a href="#">
+								<div id="3" class="image_preview_3 cellTarget">
+									<div class = "imageInCell">
+										<img src=""></img>
+									</div>
+									<div class = "ableCell"></div>
+									<div class = "disableCell_1"></div>
+									<div class = "disableCell_2"></div>
+									<div class = "previewImage"></div>
+									<div class = "cell_size">
+										<div class="pix">100 x 1000</div>
+									</div>
+								</div>
+							</a>
+							<a href="#">
+								<div id="4" class="image_preview_4 cellTarget">
+									<div class = "imageInCell">
+										<img src=""></img>
+									</div>
+									<div class = "ableCell"></div>
+									<div class = "disableCell_1"></div>
+									<div class = "disableCell_2"></div>
+									<div class = "previewImage"></div>
+									<div class = "cell_size">
+										<div class="pix">100 x 100</div>
+									</div>
+								</div>
+							</a>
+							<a href="#">
+								<div id="5" class="image_preview_5 cellTarget">
+									<div class = "imageInCell">
+										<img src=""></img>
+									</div>
+									<div class = "ableCell"></div>
+									<div class = "disableCell_1"></div>
+									<div class = "disableCell_2"></div>
+									<div class = "previewImage"></div>
+									<div class = "cell_size">
+										<div class="pix">100 x 100</div>
+									</div>
+								</div>
+							</a>
+							<div class="image_selected"></div>
+						</div>
+						<div class="buttons">
+							<a id="1" href="#"><div class="image_left"></div></a>
+							<a id="2" href="#"><div class="image_right"></div></a>
+							<a id="3" href="#"><div class="image_up"></div></a>
+							<a id="4" href="#"><div class="image_down"></div></a>
+							<a id="5" href="#"><div class="image_plus"></div></a>
+							<a id="6" href="#"><div class="image_minus"></div></a>
+						</div>
+						<div class="bottom_btn">
+							<a id="1" href="#"><div class="apply"></div></a>
+							<a id="2" href="#"><div class="cancel"></div></a>							
+						</div>
+						
+						<div class="select_an_image">
+							<div class="list_item_container_outer cellImage scr-area">
+								<div class="list_item_container cellImage scr-cont">									
+									<div class="title_myImages">My Images
+										<div class="noImage">No image. Please add your image.</div>
+									</div>							
+									<div class="image_selected"></div>
+								</div>
+							</div>
+							<div class="imageScroll cellImage scr-bar-area">
+								<div class="navigator cellImage scr-bar">
+								</div>
+							</div>							
+							<form action="#" enctype="multipart/form-data" method="post">
+								<a href="#">										
+									<input type="file" accept='image/*' name="file_upload" class="input_file_img" multiple onchange="reviewUploadImg(this)"></input>
+									<div class="plus"></div>
+								</a>
+								<a href="#"><div class="minus"></div></a>
+								<a href="#"><div class="close"></div></a>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="text">
+					<div class="contents">
+						<div class="text_window"></div>
+						<div class="text_preview">
+							<div class="text_preview_img">
+								<div class="vertical-align"></div>
+							</div>
+						</div>
+						<div class="text_input">
+							<textarea id="input_text_input" type="text" placeHolder="입력하세요" rel="text_name"></textarea>
+						</div>
+						<a id="1" href="#">
+							<div class="text_font">굴림체</div>
+						</a>						
+						<a id="2" href="#">
+							<div class="text_size">48</div>
+						</a>
+						<a id="3" href="#">
+							<div class="text_color">
+								<div class="status">A</div>
+							</div>
+						</a>						
+						<a id="4" href="#">
+							<div class="text_weight">
+								<div class="status">A</div>
+							</div>
+						</a>
+						<a id="5" href="#">
+							<div class="text_back_color">
+								<div class="status"></div>
+							</div>
+						</a>
+						<a id="6" href="#"><div class="text_align_left"></div></a>
+						<a id="7" href="#"><div class="text_align_center"></div></a>
+						<a id="8" href="#"><div class="text_align_right"></div></a>
+						<a id="9" href="#"><div class="text_align_top"></div></a>
+						<a id="10" href="#"><div class="text_align_middle"></div></a>
+						<a id="11 href="#"><div class="text_align_bottom"></div></a>
+						<div class="bottom_btn">
+							<a id="1" href="#"><div class="apply"></div></a>
+							<a id="2" href="#"><div class="cancel"></div></a>							
+						</div>
+						<div class="text_font_list">
+							<a id="1" href="#"><div class="list_1">굴림체</div></a>
+							<a id="2" href="#"><div class="list_2">궁서체</div></a>
+							<a id="3" href="#"><div class="list_3">돋움체</div></a>
+							<a id="4" href="#"><div class="list_4">바탕체</div></a>
+							<a id="5" href="#"><div class="list_5">휴먼엽서체</div></a>
+						</div>
+						<div class="text_size_list">
+							<a id="1" href="#"><div class="list_1">48</div></a>
+							<a id="2" href="#"><div class="list_2">64</div></a>
+							<a id="3" href="#"><div class="list_3">72</div></a>
+							<a id="4" href="#"><div class="list_4">100</div></a>
+							<a id="5" href="#"><div class="list_5">120</div></a>
+						</div>
+						<div class="text_color_list">
+							<div class="palette">
+								<a id="0" href="#"><div class="list_0"></div></a>			
+								<a id="1" href="#"><div class="list_1"></div></a>
+								<a id="2" href="#"><div class="list_2"></div></a>
+								<a id="3" href="#"><div class="list_3"></div></a>
+								<a id="4" href="#"><div class="list_4"></div></a>
+								<a id="5" href="#"><div class="list_5"></div></a>
+								<a id="6" href="#"><div class="list_6"></div></a>
+								<a id="7" href="#"><div class="list_7"></div></a>
+								<a id="8" href="#"><div class="list_8"></div></a>
+								<a id="9" href="#"><div class="list_9"></div></a>
+								<a id="10" href="#"><div class="list_10"></div></a>
+								<a id="11" href="#"><div class="list_11"></div></a>
+								<a id="12" href="#"><div class="list_12"></div></a>
+								<a id="13" href="#"><div class="list_13"></div></a>
+								<a id="14" href="#"><div class="list_14"></div></a>
+								<a id="15" href="#"><div class="list_15"></div></a>
+								<a id="16" href="#"><div class="list_16"></div></a>
+								<a id="17" href="#"><div class="list_17"></div></a>
+								<a id="18" href="#"><div class="list_18"></div></a>
+								<a id="19" href="#"><div class="list_19"></div></a>
+								<a id="20" href="#"><div class="list_20"></div></a>
+								<a id="21" href="#"><div class="list_21"></div></a>
+								<a id="22" href="#"><div class="list_22"></div></a>
+								<a id="23" href="#"><div class="list_23"></div></a>
+								<a id="24" href="#"><div class="list_24"></div></a>
+								<a id="25" href="#"><div class="list_25"></div></a>
+								<a id="26" href="#"><div class="list_26"></div></a>
+								<a id="27" href="#"><div class="list_27"></div></a>
+								<a id="28" href="#"><div class="list_28"></div></a>
+								<a id="29" href="#"><div class="list_29"></div></a>
+								<a id="30" href="#"><div class="list_30"></div></a>
+								<a id="31" href="#"><div class="list_31"></div></a>
+								<a id="32" href="#"><div class="list_32"></div></a>
+								<a id="33" href="#"><div class="list_33"></div></a>
+								<a id="34" href="#"><div class="list_34"></div></a>
+								<a id="35" href="#"><div class="list_35"></div></a>
+								<a id="36" href="#"><div class="list_36"></div></a>
+								<a id="37" href="#"><div class="list_37"></div></a>
+								<a id="38" href="#"><div class="list_38"></div></a>
+								<a id="39" href="#"><div class="list_39"></div></a>
+								<a id="40" href="#"><div class="list_40"></div></a>
+								<a id="41" href="#"><div class="list_41"></div></a>
+								<a id="42" href="#"><div class="list_42"></div></a>
+								<a id="43" href="#"><div class="list_43"></div></a>
+								<a id="44" href="#"><div class="list_44"></div></a>
+								<a id="45" href="#"><div class="list_45"></div></a>
+								<a id="46" href="#"><div class="list_46"></div></a>
+								<a id="47" href="#"><div class="list_47"></div></a>
+								<a id="48" href="#"><div class="list_48"></div></a>
+								<a id="49" href="#"><div class="list_49"></div></a>
+								<a id="50" href="#"><div class="list_50"></div></a>
+								<a id="51" href="#"><div class="list_51"></div></a>
+								<a id="52" href="#"><div class="list_52"></div></a>
+								<a id="53" href="#"><div class="list_53"></div></a>
+								<a id="54" href="#"><div class="list_54"></div></a>
+								<a id="55" href="#"><div class="list_55"></div></a>
+								<a id="56" href="#"><div class="list_56"></div></a>
+								<a id="57" href="#"><div class="list_57"></div></a>
+								<a id="58" href="#"><div class="list_58"></div></a>
+								<a id="59" href="#"><div class="list_59"></div></a>
+								<a id="60" href="#"><div class="list_60"></div></a>
+								<a id="61" href="#"><div class="list_61"></div></a>
+								<a id="62" href="#"><div class="list_62"></div></a>
+								<a id="63" href="#"><div class="list_63"></div></a>
+								<a id="64" href="#"><div class="list_64"></div></a>
+								<a id="65" href="#"><div class="list_65"></div></a>
+								<a id="66" href="#"><div class="list_66"></div></a>
+								<a id="67" href="#"><div class="list_67"></div></a>													
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cancel_layer">
+					<div class="contents">
+						<div class="cancel_layer_window">
+						</div>
+						<div class="cancel_layer_the_project">
+						</div>						
+						<div class="bottom_btn">
+							<a id="1" href="#"><div class="apply"></div></a>
+							<a id="2" href="#"><div class="cancel"></div></a>							
+						</div>						
+					</div>
+				</div>
+				<div class="save">
+					<div class="contents">
+						<div class="save_window">
+						</div>
+						<div class="save_to_my_project">
+						</div>
+						<div class="project_name">
+						</div>
+						<div class="input_project_name">
+							<input id="input_project_name_date" type="text" rel="project_name"></input>
+						</div>
+						<!--<div class="save_new">
+						</div>						
+						<div class="save_over">
+						</div>
+						<input id="save_01" type="radio" value="new" class="save_radio_img" name="save_list" checked></input>
+						<label for="save_01"></label>-->
+						<!--<input id="save_02" type="radio" value="over" class="save_radio_img" name="save_list"></input>
+						<label for="save_02"></label>-->
+						<div class="save_dimmed">
+						</div>
+						<div class="bottom_btn">
+							<a id="1" href="#"><div class="apply"></div></a>
+							<a id="2" href="#"><div class="cancel"></div></a>							
+						</div>						
+					</div>
+				</div>
+				<div class="publish">
+					<div class="contents">
+						<div class="publish_window">
+						</div>
+						<div class="publish_the_project">
+						</div>		
+						<div class="publish_me">
+						</div>						
+						<!--<div class="publish_everyone">
+						</div>	-->					
+						<input id="publish_01" type="radio" value="me" class="publish_radio_img" name="publish_list" checked></input>
+						<label for="publish_01"></label>
+						<!--<input id="publish_02" type="radio" value="everyone" class="publish_radio_img" name="publish_list"></input>
+						<label for="publish_02"></label>-->						
+						<div class="bottom_btn">
+							<a id="1" href="#"><div class="apply"></div></a>
+							<a id="2" href="#"><div class="cancel"></div></a>							
+						</div>						
+					</div>
+				</div>
+				
+			</div>	
+		</div>
+		<div id="signinButton" style="display:none">
+			<span
+				class="g-signin"
+				data-callback="signinCallback"
+				data-clientid="1053418943472-6cgtmg8cgm9njmqg3ve09k7923e6r072.apps.googleusercontent.com"
+				data-cookiepolicy="single_host_origin"
+				data-requestvisibleactions="http://schemas.google.com/AddActivity"
+				data-scope="https://www.googleapis.com/auth/plus.login">
+			</span>
+		</div>
+		<!-- Place this asynchronous JavaScript just before your </body> tag -->
+		<script type="text/javascript">
+			(function() {
+				var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+				po.src = 'https://apis.google.com/js/client:plusone.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			})();
+		</script>
+	</body>
+	<script>
+		function nextPage() {
+			location.href = "./main";
+		}
+		function signinCallback(authResult) {
+			if (authResult['status']['signed_in']) {
+				// Update the app to reflect a signed in user
+				// Hide the sign-in button now that the user is authorized, for example:
+				document.getElementById('signinButton').setAttribute('style', 'display: none');
+				console.log("Login success!!");			
+			} else {
+				// Update the app to reflect a signed out user
+				// Possible error values:
+				//   "user_signed_out" - User is signed-out
+				//   "access_denied" - User denied access to your app
+				//   "immediate_failed" - Could not automatically log in the user
+				console.log('Sign-in state: ' + authResult['error']);
+				document.location.href = ".";
+			}
+		}
+		/*
+		// feature detection
+		if (typeof document.cancelFullScreen != 'undefined' && document.fullScreenEnabled === true) {
+		  // mozilla proposal
+		  element.requestFullScreen();
+		  document.cancelFullScreen(); 
+
+		  // Webkit (works in Safari and Chrome Canary)
+		  element.webkitRequestFullScreen(); 
+		  document.webkitCancelFullScreen(); 
+
+		  // Firefox (works in nightly)
+		  element.mozRequestFullScreen();
+		  document.mozCancelFullScreen(); 
+
+		  // W3C Proposal
+		  element.requestFullscreen();
+		  document.exitFullscreen();
+		}
+		*/
+	</script>
+</html>

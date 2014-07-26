@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" href="../websrc/css/style_common.css" />
+		<title>0.3</title>
+	</head>
+	<body>
+		<div>
+			<div class="intro"></div>
+		</div>
+		<div id="signinButton" style="position:relative; display:none; top:450px; left:590px;">
+			<span
+				class="g-signin"
+				data-callback="signinCallback"
+				data-clientid="1053418943472-6cgtmg8cgm9njmqg3ve09k7923e6r072.apps.googleusercontent.com"
+				data-cookiepolicy="single_host_origin"
+				data-requestvisibleactions="http://schemas.google.com/AddActivity"
+				data-scope="https://www.googleapis.com/auth/plus.login">
+			</span>
+		</div>
+		<!-- Place this asynchronous JavaScript just before your </body> tag -->
+		<script type="text/javascript">
+			(function() {
+				var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+				po.src = 'https://apis.google.com/js/client:plusone.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+			})();
+		</script>
+	</body>
+	<script>
+		function nextPage() {
+			location.href = "./signin";
+		}
+		function signinCallback(authResult) {
+			if (authResult['status']['signed_in']) {
+				// Update the app to reflect a signed in user
+				// Hide the sign-in button now that the user is authorized, for example:
+				document.getElementById('signinButton').setAttribute('style', 'display: none');
+				console.log("Login success!!");
+				//alert(typeof(authResult));
+				//console.log(authResult);
+				nextPage();
+			} else {
+				// Update the app to reflect a signed out user
+				// Possible error values:
+				//   "user_signed_out" - User is signed-out
+				//   "access_denied" - User denied access to your app
+				//   "immediate_failed" - Could not automatically log in the user
+				document.getElementById('signinButton').setAttribute('style', 'position:relative; display:block; top:450px; left:590px;');
+				console.log('Sign-in state: ' + authResult['error']);
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" href="../websrc/css/upload.css" />
+		<script language="javascript" type="text/javascript" src="../websrc/js/jquery-1.8.2.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/jquery-ui.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/jquery.jcarousel.min.js"></script>
+		<script language="javascript" type="text/javascript" src="../websrc/js/ui.js"></script>
+		<title>0.3</title>
+	</head>
+	<body>
+		<div class = "upload_background">
+			<form action="<?php echo $upload_url?>" onSubmit="showLoading();" enctype="multipart/form-data" method="post">
+				<div class="btn_file_wrapper">
+					<input class = "btn_file" type="file" name="uploaded_files" size="0"  multiple onchange="reviewUploadImg(this)">
+				</div>
+			   <input class = "btn_upload" type="submit" value="">
+			</form>
+			<div class = "file_name">File Name</div>
+			<div class = "btn_close"></div>
+		</div>
+		<div class = "loading">
+			<div class = "loading_back"></div>			
+			<div class = "loading_text">Loading...</div>
+		</div>
+		<div class = "loading_icon"></div>
+	</body>
+	<script>		
+		function reviewUploadImg(fileObj) {		
+			var filePath = fileObj.value;
+			var fileName = filePath.substring(filePath.lastIndexOf("\\")+1);
+			var fileKind = fileName.split(".")[1];
+			
+			//$(".upload_background .btn_upload").show();
+			$(".upload_background .file_name").text(fileName);
+		}
+		
+		window.onbeforeunload = WindowCloseHanlder;
+		function WindowCloseHanlder()
+		{			
+			opener.window.body_dimmed_close();
+		}
+		
+		
+		function showLoading() {
+			//alert("showLoading() 호출");
+			$(".loading").show();	
+			$(".loading_icon").show();					
+		}
+		/*
+		$(".upload_background .btn_upload").click(function(){			
+			$(".loading").show();
+			$(".loading .loading_icon").show();
+			$(".loading .loading_icon").css({"top":"128px"});
+		});
+		*/
+		
+		
+		$(".upload_background .btn_close").click(function(){			
+			opener.window.body_dimmed_close();
+			window.opener = window.location.href; 
+			self.close();
+		});
+	</script>	
+</html>

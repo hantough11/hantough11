@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+
+
+/* -------------------------0. 공통 -------------------------*/
+a{
+	margin:0px;
+	text-decoration:none;
+}
+body{	
+	background-position:50% 50%;
+	background-color:#222222;
+	position:relative;
+	width:542px;
+	height:289px;
+	margin:0 auto;
+}
+.upload_background{
+	background-image:url('../img/main/upload_back.png');
+	background-repeat:no-repeat;
+	display:block;
+	width:542px;
+	height:289px;
+	position:absolute;
+	top:0;
+	left:0;
+}
+.upload_background .btn_file_wrapper  {
+    background:url('../img/main/upload_btn_file.png') no-repeat;
+	display:block;
+	width:177px;
+	height:40px;
+	position:absolute;
+	top:150px;
+	left:180px;
+    overflow: hidden;
+}
+.upload_background .btn_file_wrapper:hover  {
+    background:url('../img/main/upload_btn_file_focus.png') no-repeat;
+	display:block;
+	width:177px;
+	height:40px;
+	position:absolute;
+	top:150px;
+	left:180px;
+    overflow: hidden;
+}
+.upload_background .btn_file_wrapper .btn_file {
+	border:none;    
+	display:block;
+	width:177px;
+	height:40px;
+	opacity: 0;
+    overflow: hidden;
+}
+.upload_background .btn_upload {
+	border:none;
+    background:url('../img/main/upload_btn_upload.png') no-repeat;
+	display:block;
+	width:177px;
+	height:40px;
+	position:absolute;
+	top:239px;
+	left:53px;
+}
+.upload_background .btn_upload:hover {
+	border:none;
+    background:url('../img/main/upload_btn_upload_focus.png') no-repeat;
+	display:block;
+	width:177px;
+	height:40px;
+	position:absolute;
+	top:239px;
+	left:53px;
+}
+.upload_background .file_name {    
+	display:block;
+	width:266px;
+	height:60px;
+	position:absolute;
+	top:100px;
+	left:135px;
+	color:#eee;font-famaily:"돋움";font-size:13px;font-weight:bold;text-align:center;
+}
+.upload_background .btn_close {
+    background:url('../img/main/upload_btn_close.png') no-repeat;
+	display:block;
+	width:177px;
+	height:40px;
+	position:absolute;
+	top:239px;
+	left:306px;
+}
+.upload_background .btn_close:hover {
+    background:url('../img/main/upload_btn_close_focus.png') no-repeat;
+	display:block;
+	width:177px;
+	height:40px;
+	position:absolute;
+	top:239px;
+	left:306px;
+}
+.loading {
+	display:none;
+	position:absolute;
+	width:542px;
+	height:289px;
+}
+.loading_back {
+	background-color:#000;
+	display:block;
+	position:absolute;
+	width:542px;
+	height:289px;
+	opacity:0.7;
+}
+.loading_icon {
+	display:none;
+	background:url('../img/main/icon_loading.gif') no-repeat;	
+	width:81px;
+	height:75px;
+	position:relative;
+	top:127px;
+	left:228px;	
+}
+.loading_text{
+	color:#fff;
+	font-size:30px;
+	font-weight:bold;
+	font-family:arial;
+	text-align:center;
+	position:relative;
+	width:542px;
+	top:86px;
+}

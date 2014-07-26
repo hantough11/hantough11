@@ -1,0 +1,96 @@
+application: popon-lg
+version: 1
+runtime: php
+api_version: 1
+
+handlers:
+- url: /websrc/css
+  static_dir: websrc/css
+  
+- url: /websrc/js
+  static_dir: websrc/js
+  
+- url: /websrc/php/submit_background.php
+  script: websrc/php/submit_background.php
+
+- url: /websrc/php/submit_background.php?files
+  script: websrc/php/submit_background.php
+  
+- url: /websrc/php/submit_image.php
+  script: websrc/php/submit_image.php
+  
+- url: /websrc/img/background_images/(.*\.(gif|png|jpg))$
+  static_files: websrc/img/background_images/\1
+  upload: websrc/img/background_images/.*\.(gif|png|jpg)$
+
+- url: /websrc/img/background_myImages/(.*\.(gif|png|jpg))$
+  static_files: websrc/img/background_myImages/\1
+  upload: websrc/img/background_myImages/.*\.(gif|png|jpg)$
+
+- url: /websrc/img/image_myImages/(.*\.(gif|png|jpg))$
+  static_files: websrc/img/image_myImages/\1
+  upload: websrc/img/image_myImages/.*\.(gif|png|jpg)$
+  
+- url: /websrc/img/main/(.*\.(gif|png|jpg))$
+  static_files: websrc/img/main/\1
+  upload: websrc/img/main/.*\.(gif|png|jpg)$
+  
+- url: /websrc/img/theme/(.*\.(gif|png|jpg))$
+  static_files: websrc/img/theme/\1
+  upload: websrc/img/theme/.*\.(gif|png|jpg)$
+
+- url: /websrc/img/theme_background/(.*\.(gif|png|jpg))$
+  static_files: websrc/img/theme_background/\1
+  upload: websrc/img/theme_background/.*\.(gif|png|jpg)$
+  
+- url:  /upload_background
+  script: ./websrc/php/upload_background_image.php
+
+- url: /upload_background_image_completed.php
+  script: ./websrc/php/upload_background_image_completed.php
+  
+- url:  /load_background
+  script: ./websrc/php/load_background_image.php
+
+- url:  /delete_background/.*
+  script: ./websrc/php/delete_background_image.php
+  
+  
+- url:  /upload_cell
+  script: ./websrc/php/upload_cell_image.php
+
+- url: /upload_cell_image_completed.php
+  script: ./websrc/php/upload_cell_image_completed.php
+  
+- url:  /load_cell
+  script: ./websrc/php/load_cell_image.php
+
+- url:  /delete_cell/.*
+  script: ./websrc/php/delete_cell_image.php
+
+  
+- url:  /upload_publish/.*
+  script: ./websrc/php/upload_publish.php
+
+- url:  /load_publish/.*
+  script: ./websrc/php/load_publish.php
+
+- url:  /delete_publish/.*
+  script: ./websrc/php/delete_publish.php
+  
+- url:  /load_number_of_publish
+  script: ./websrc/php/load_number_of_publish.php
+  
+- url:  /signin
+  script: ./websrc/php/signin.php
+  
+- url:  /signout
+  script: ./websrc/php/signout.php
+  
+- url:  /main
+  script: ./websrc/php/main.php
+  
+- url:  /.*
+  script: index.php
+
+
